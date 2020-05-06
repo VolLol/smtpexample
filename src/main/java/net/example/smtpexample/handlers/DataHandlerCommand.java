@@ -21,7 +21,9 @@ public class DataHandlerCommand extends BaseHandlerCommand {
             sessionContext.appendMailData(inputLine);
             sessionContext.appendMailData("\n");
         }
-
+        else {
+            answers.add("500 5.5.1 Syntax error, command unrecognized.");
+        }
         if (isDataEnd()) {
             answers.add("250 2.6.0 Queued mail for delivery");
             sessionContext.setSessionStateDataDone();
